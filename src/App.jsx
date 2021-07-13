@@ -13,7 +13,7 @@ import TodoFooter from './components/TodoFooter.jsx';
 const Container = styled.section`
   position: relative;
   z-index: 1000;
-  padding-top: 55px;
+  padding-top: 48px;
   max-width: 545px;
   margin: 0 auto;
 
