@@ -70,6 +70,6 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/ihollarmide)
-- Twitter - [@yourusername](https://www.twitter.com/i_hollarmide)
+- Frontend Mentor - [@ihollarmide](https://www.frontendmentor.io/profile/ihollarmide)
+- Twitter - [@i_hollarmide](https://www.twitter.com/i_hollarmide)
 
