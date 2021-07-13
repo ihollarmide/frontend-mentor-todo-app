@@ -28,6 +28,7 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
   color: inherit;
+  font-weight: bold;
 
   @media only screen and (max-width: 600px) {
     position: absolute;
@@ -62,8 +63,8 @@ const NavItem = styled.a`
     margin-right: 15px;
   }
 
-  ${({ active }) =>
-    active &&
+  ${({ currentFilter }) =>
+    currentFilter &&
     css`
       color: hsl(220, 98%, 61%);
     `
@@ -89,14 +90,14 @@ const ClearList = styled.p`
   }
 `
 
-const TodoFooter = ({ theme, todoItemsLeft, clearCompletedTodoItems, page,  changePage }) => {
+const TodoFooter = ({ theme, todoItemsLeft, clearCompletedTodoItems, filter, activateFilter }) => {
   return (
     <Footer theme={theme}>
       <ItemsLeft>{todoItemsLeft} items left</ItemsLeft>
       <Nav theme={theme}>
-        <NavItem theme={theme} active={page === 'all'} onClick={() => changePage('all')}>All</NavItem>
-        <NavItem theme={theme} active={page === 'active'} onClick={() => changePage('active')}>Active</NavItem>
-        <NavItem theme={theme} active={page === 'completed'} onClick={() => changePage('completed')}>Completed</NavItem>
+        <NavItem theme={theme} currentFilter={filter === 'All'} onClick={() => activateFilter('All')}>All</NavItem>
+        <NavItem theme={theme} currentFilter={filter === 'Active'} onClick={() => activateFilter('Active')}>Active</NavItem>
+        <NavItem theme={theme} currentFilter={filter === 'Completed'} onClick={() => activateFilter('Completed')}>Completed</NavItem>
       </Nav>
       <ClearList theme={theme} onClick={clearCompletedTodoItems}>Clear Completed</ClearList>
     </Footer>

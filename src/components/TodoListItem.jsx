@@ -89,6 +89,7 @@ const TodoItemDelete = styled.a`
 `
 
 const TodoItem = styled.article`
+  background-color: ${props => props.theme === "light" ? "hsl(0, 0%, 98%)" : "hsl(235, 24%, 19%)" };
   padding: 20px;
   display: flex;
   align-items: center;
@@ -153,7 +154,7 @@ const TodoText = styled.p`
 
 const TodoListItem = ({ id, theme, text, completed, handleCheck, deleteTodoItem }) => {
   return (
-    <TodoItem theme={theme}>
+    <TodoItem theme={theme} >
       
       <TodoInstruction>
         <TodoCheck type="checkbox" id={`todo-item-${id}`} checked={completed} onChange={() => handleCheck(id)}/>
