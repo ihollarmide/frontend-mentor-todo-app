@@ -1,0 +1,106 @@
+import React from 'react'
+import styled, { css } from 'styled-components'
+
+const Footer = styled.footer`
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: ${props => props.theme === "light" ? "hsl(236, 9%, 61%)" : "hsl(234, 11%, 52%)" };
+  font-size: 15px;
+
+  @media only screen and (max-width: 600px) {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  @media only screen and (max-width: 500px) {
+    font-size: 12px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    padding: 20px;
+  }
+`
+
+const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: inherit;
+
+  @media only screen and (max-width: 600px) {
+    position: absolute;
+    left: 0;
+    top: 68px;
+    width: 100%;
+    order: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: ${props => props.theme === "light" ? "hsl(0, 0%, 98%)" : "hsl(235, 24%, 19%)" };
+    border-radius: 4px;
+    box-shadow: ${props => props.theme === "light" ? "0px 35px 50px -15px rgba(194, 195, 214, 0.5)" : "0px 35px 50px -15px rgba(0, 0, 0, 0.5)" };
+  }
+
+  @media only screen and (max-width: 400px) {
+    padding: 16px 20px;
+  }
+`
+
+const NavItem = styled.a`
+  cursor: pointer;
+  display: inline-block;
+  color: inherit;
+
+  &:hover {
+    color: ${props => props.theme === "light" ? "hsl(235, 19%, 35%)" : "hsl(236, 33%, 92%)" };
+  }
+
+  &:not(:last-of-type) {
+    margin-right: 15px;
+  }
+
+  ${({ active }) =>
+    active &&
+    css`
+      color: hsl(220, 98%, 61%);
+    `
+  }
+`
+
+const ItemsLeft = styled.p`
+  @media only screen and (max-width: 600px) {
+    order: 1;
+  }
+`
+
+const ClearList = styled.p`
+  color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    color: ${props => props.theme === "light" ? "hsl(235, 19%, 35%)" : "hsl(234, 39%, 85%)" };
+  }
+
+  @media only screen and (max-width: 600px) {
+    order: 2;
+  }
+`
+
+const TodoFooter = ({ theme, todoItemsLeft, clearCompletedTodoItems, page,  changePage }) => {
+  return (
+    <Footer theme={theme}>
+      <ItemsLeft>{todoItemsLeft} items left</ItemsLeft>
+      <Nav theme={theme}>
+        <NavItem theme={theme} active={page === 'all'} onClick={() => changePage('all')}>All</NavItem>
+        <NavItem theme={theme} active={page === 'active'} onClick={() => changePage('active')}>Active</NavItem>
+        <NavItem theme={theme} active={page === 'completed'} onClick={() => changePage('completed')}>Completed</NavItem>
+      </Nav>
+      <ClearList theme={theme} onClick={clearCompletedTodoItems}>Clear Completed</ClearList>
+    </Footer>
+  )
+}
+
+export default TodoFooter
