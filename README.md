@@ -64,7 +64,7 @@ Users should be able to:
 
 ### Useful resources
 
-- [FreeCodeCamp - How to Add Drag and Drop in React with React Beautiful DnD](https://www.freecodecamp.org/news/how-to-add-drag-and-drop-in-react-with-react-beautiful-dnd/) - This is an amazing article which guided me on how to add the drag and drop feature on the app using the react-beautiful-dnd library
+- [FreeCodeCamp - How to Add Drag and Drop in React with React Beautiful DnD](https://www.freecodecamp.org/news/how-to-add-drag-and-drop-in-react-with-react-beautiful-dnd/) - This is an amazing article which guided me on how to add the drag and drop feature to the app using the react-beautiful-dnd library
 - [Stackoverflow - Function components cannot be given refs with React Beautiful DND](https://stackoverflow.com/questions/68361643/function-components-cannot-be-given-refs-with-react-beautiful-dnd/68361783#68361783) - Here is the question I asked on Stack Overflow that helped me to solve the innerRef problem I was having with the react-beautiful-dnd library
 
 
