@@ -12,7 +12,7 @@ const TodoMarker = styled.label`
   display: flex;
   align-items: center;
   position: relative;
-  margin-right: 15px;
+  margin-right: 20px;
   width: 25px;
   height: 26px;
   border-radius: 100%;
@@ -90,7 +90,7 @@ const TodoItemDelete = styled.a`
 
 const TodoItem = styled.article`
   background-color: ${props => props.theme === "light" ? "hsl(0, 0%, 98%)" : "hsl(235, 24%, 19%)" };
-  padding: 20px;
+  padding: 20px 25px;
   display: flex;
   align-items: center;
   border-bottom-width: 1px;

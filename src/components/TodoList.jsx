@@ -5,7 +5,8 @@ const Container = styled.div`
   background-color: ${props => props.theme === "light" ? "hsl(0, 0%, 98%)" : "hsl(235, 24%, 19%)" };
   border-radius: 4px;
   box-shadow: ${props => props.theme === "light" ? "0px 35px 50px -15px rgba(194, 195, 214, 0.5)" : "0px 35px 50px -15px rgba(0, 0, 0, 0.5)" };
-  margin-bottom: 50px;
+  margin-bottom: 60px;
+  overflow: hidden;
 
   @media only screen and (max-width: 600px) {
     margin-bottom: 104px;

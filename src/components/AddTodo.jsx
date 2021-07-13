@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   height: 64px;
   display: flex;
   align-items: center;
-  padding-left: 60px;
+  padding-left: 70px;
   padding-right: 25px;
   border-radius: 4px;
   width: 100%;
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
     content: "";
     position: absolute;
     top: 18px;
-    left: 20px;
+    left: 25px;
     width: 26px;
     height: 26px;
     border: 1px solid hsl(233, 14%, 35%);
@@ -34,6 +34,7 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 400px) {
     &:before {
       top: 12px;
+      left: 20px;
       width: 20px;
       height: 20px;
     } 
