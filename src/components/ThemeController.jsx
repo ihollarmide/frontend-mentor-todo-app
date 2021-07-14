@@ -52,7 +52,7 @@ const ThemeController = () => {
   return (
     <Header>
       <Title>TODO</Title>
-      <Switcher onClick={switchTheme} role="button">
+      <Switcher onClick={switchTheme}>
         <SwitchImageIcon src={theme === "light" ? Moon : Sun} alt={theme === "light" ? "Moon Icon" : "Sun Icon"}/>
       </Switcher>
     </Header>
