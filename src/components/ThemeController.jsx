@@ -50,7 +50,7 @@ const ThemeController = () => {
 
   const { theme, switchTheme } = useContext(ThemeContext);
   return (
-    <Header>
+    <Header role="banner">
       <Title>TODO</Title>
       <Switcher onClick={switchTheme}>
         <SwitchImageIcon src={theme === "light" ? Moon : Sun} alt={theme === "light" ? "Moon Icon" : "Sun Icon"}/>

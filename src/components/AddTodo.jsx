@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   background-color: ${props => props.theme === "light" ? "hsl(0, 0%, 98%)" : "hsl(235, 24%, 19%)" };
   height: 64px;
   display: flex;
@@ -57,8 +57,8 @@ const TodoInput = styled.input`
 
 const AddTodo = ({ theme, value, handleInput, addTodoItem }) => {
   return (
-    <Wrapper theme={theme}>
-      <TodoForm onSubmit={event => addTodoItem(event, value)}>
+    <Wrapper theme={theme} role="region">
+      <TodoForm onSubmit={event => addTodoItem(event, value)} role="form" >
         <TodoInput placeholder="Create a new todo..." value={value} onChange={handleInput} />
       </TodoForm>
     </Wrapper>

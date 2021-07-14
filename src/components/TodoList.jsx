@@ -43,11 +43,11 @@ const AttributionLink = styled.a`
 const TodoList = ({ theme, children }) => {
   return (
     <>
-      <Container theme={theme}>
+      <Container theme={theme} role="list">
         {children}
       </Container>
-      <Info theme={theme}>Drag and drop to reorder list</Info>
-      <Attribution theme={theme}>Challenge by <AttributionLink href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW" target="_blank" rel="noreferrer">Frontend Mentor.</AttributionLink> Coded by <AttributionLink href="https://www.github.com/ihollarmide" target="_blank" rel="noreferrer">Idris</AttributionLink></Attribution>
+      <Info theme={theme} role="contentinfo">Drag and drop to reorder list</Info>
+      <Attribution theme={theme} role="contentinfo">Challenge by <AttributionLink href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW" target="_blank" rel="noreferrer">Frontend Mentor.</AttributionLink> Coded by <AttributionLink href="https://www.github.com/ihollarmide" target="_blank" rel="noreferrer">Idris</AttributionLink></Attribution>
     </>
   )
 }

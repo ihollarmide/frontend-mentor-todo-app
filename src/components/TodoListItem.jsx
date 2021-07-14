@@ -67,7 +67,7 @@ const TodoMarker = styled.label`
   }
 `
 
-const TodoInstruction = styled.article`
+const TodoInstruction = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -88,7 +88,7 @@ const TodoItemDelete = styled.a`
   visibility: hidden;
 `
 
-const TodoItem = styled.article`
+const TodoItem = styled.div`
   background-color: ${props => props.theme === "light" ? "hsl(0, 0%, 98%)" : "hsl(235, 24%, 19%)" };
   padding: 20px 25px;
   display: flex;
@@ -158,14 +158,14 @@ const TodoText = styled.p`
 
 const TodoListItem = ({ id, theme, text, completed, handleCheck, deleteTodoItem }) => {
   return (
-    <TodoItem theme={theme} >
+    <TodoItem theme={theme} role="list">
       
-      <TodoInstruction>
+      <TodoInstruction role="region">
         <TodoCheck type="checkbox" id={`todo-item-${id}`} checked={completed} onChange={() => handleCheck(id)}/>
-        <TodoMarker htmlFor={`todo-item-${id}`} theme={theme} />
-        <TodoText theme={theme} completed={completed} onClick={() => handleCheck(id)}>{text}</TodoText>
+        <TodoMarker htmlFor={`todo-item-${id}`} theme={theme} role="checkbox"/>
+        <TodoText theme={theme} completed={completed} onClick={() => handleCheck(id)} role="region">{text}</TodoText>
       </TodoInstruction>
-      <TodoItemDelete onClick={() => deleteTodoItem(id)}>
+      <TodoItemDelete onClick={() => deleteTodoItem(id)} role="button">
         <TodoItemCrossImage src={CrossIcon} alt="Delete Item" />
       </TodoItemDelete>
 

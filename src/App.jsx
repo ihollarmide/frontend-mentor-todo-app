@@ -10,7 +10,7 @@ import TodoList from './components/TodoList.jsx';
 import TodoListItem from './components/TodoListItem.jsx';
 import TodoFooter from './components/TodoFooter.jsx';
 
-const Container = styled.section`
+const Container = styled.main`
   position: relative;
   z-index: 1000;
   padding-top: 48px;
@@ -184,7 +184,7 @@ function App() {
   return (
     <>
       <GlobalStyles theme={theme}/>
-      <Container>
+      <Container role="main">
         <ThemeController />
         <AddTodo theme={theme} value={value} handleInput={handleInput} addTodoItem={addTodoItem}/>
 
