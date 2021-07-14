@@ -10,7 +10,7 @@ const Container = styled.div`
 const TodoList = ({ theme, children }) => {
   return (
     <>
-      <Container theme={theme} role="list">
+      <Container theme={theme}>
         {children}
       </Container>
     </>

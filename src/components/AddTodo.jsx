@@ -57,7 +57,7 @@ const TodoInput = styled.input`
 
 const AddTodo = ({ theme, value, handleInput, addTodoItem }) => {
   return (
-    <Wrapper theme={theme} role="command">
+    <Wrapper theme={theme}>
       <TodoForm onSubmit={event => addTodoItem(event, value)}>
         <TodoInput placeholder="Create a new todo..." value={value} onChange={handleInput}/>
       </TodoForm>

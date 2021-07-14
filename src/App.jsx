@@ -213,7 +213,7 @@ function App() {
                       filteredTodoItems.map((todoItem, index) => (
                         <Draggable key={todoItem.id} draggableId={todoItem.id} index={index}>
                           {(provided) => (
-                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} role="list-item">
+                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                               <TodoListItem id={todoItem.id} theme={theme} text={todoItem.text} completed={todoItem.completed} handleCheck={handleCheck} deleteTodoItem={deleteTodoItem}/>
                             </div>
                             

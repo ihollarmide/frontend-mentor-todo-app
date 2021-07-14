@@ -117,14 +117,14 @@ const ClearList = styled.p`
 const TodoFooter = ({ theme, todoItemsLeft, clearCompletedTodoItems, filter, activateFilter }) => {
   return (
     <>
-      <Footer theme={theme} role="contentinfo">
-        <ItemsLeft role="presentation">{todoItemsLeft} items left</ItemsLeft>
-        <Nav theme={theme} role="navigation">
+      <Footer theme={theme}>
+        <ItemsLeft>{todoItemsLeft} items left</ItemsLeft>
+        <Nav theme={theme}>
           <NavItem theme={theme} currentFilter={filter === 'All'} onClick={() => activateFilter('All')}>All</NavItem>
           <NavItem theme={theme} currentFilter={filter === 'Active'} onClick={() => activateFilter('Active')}>Active</NavItem>
           <NavItem theme={theme} currentFilter={filter === 'Completed'} onClick={() => activateFilter('Completed')}>Completed</NavItem>
         </Nav>
-        <ClearList theme={theme} onClick={clearCompletedTodoItems} role="command">Clear Completed</ClearList>
+        <ClearList theme={theme} onClick={clearCompletedTodoItems}>Clear Completed</ClearList>
       </Footer>
     </>
   )

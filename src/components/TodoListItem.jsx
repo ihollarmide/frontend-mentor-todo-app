@@ -156,10 +156,10 @@ const TodoListItem = ({ id, theme, text, completed, handleCheck, deleteTodoItem 
   return (
     <TodoItem theme={theme} role="note">
       
-      <TodoInstruction role="region">
-        <TodoCheck type="checkbox" id={`todo-item-${id}`} checked={completed} ariaChecked={completed} onChange={() => handleCheck(id)}/>
-        <TodoMarker htmlFor={`todo-item-${id}`} theme={theme} role="switch" ariaLabelledBy={`todo-item-${id}`} />
-        <TodoText theme={theme} completed={completed} onClick={() => handleCheck(id)} role="region">{text}</TodoText>
+      <TodoInstruction>
+        <TodoCheck type="checkbox" id={`todo-item-${id}`} checked={completed} onChange={() => handleCheck(id)}/>
+        <TodoMarker htmlFor={`todo-item-${id}`} theme={theme} />
+        <TodoText theme={theme} completed={completed} onClick={() => handleCheck(id)}>{text}</TodoText>
       </TodoInstruction>
       <TodoItemDelete onClick={() => deleteTodoItem(id)} role="button">
         <TodoItemCrossImage src={CrossIcon} alt="Delete Item" />
