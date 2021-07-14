@@ -34,10 +34,11 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop Light Mode](https://res.cloudinary.com/iolamide/image/upload/v1626217773/Frontend_Mentor_Todo_App_Light_Mode_By_Idris_j2d0ds.png)
-![Desktop Dark Mode](https://res.cloudinary.com/iolamide/image/upload/v1626217773/Frontend_Mentor_Todo_App_Dark_Mode_By_Idris_m3n2op.png)
-![Mobile Light Mode](https://res.cloudinary.com/iolamide/image/upload/v1626219448/todo-app-mobile-light-mode-by-idris_iqtj8y.jpg)
-![Mobile Dark Mode](https://res.cloudinary.com/iolamide/image/upload/v1626219448/todo-app-mobile-dark-mode-by-idris_kgjhbo.jpg)
+- [Desktop Dark Mode](https://res.cloudinary.com/iolamide/image/upload/v1626217773/Frontend_Mentor_Todo_App_Dark_Mode_By_Idris_m3n2op.png)
+- [Desktop Light Mode](https://res.cloudinary.com/iolamide/image/upload/v1626217773/Frontend_Mentor_Todo_App_Light_Mode_By_Idris_j2d0ds.png)
+- [Mobile Dark Mode](https://res.cloudinary.com/iolamide/image/upload/v1626249528/mobile-todo-app-dark-theme-by-idris_my0pde.jpg)
+- [Mobile Light Mode](https://res.cloudinary.com/iolamide/image/upload/v1626249526/mobile-todo-app-light-theme-by-idris_go516u.jpg)
+
 
 ### Links
 
