@@ -99,6 +99,10 @@ const TodoItem = styled.article`
   color: inherit;
   cursor: pointer;
 
+  &:first-of-type {
+    border-radius: 4px 4px 0 0;
+  }
+
   &:hover ${TodoItemDelete} {
     opacity: 1;
     visibility: visible;

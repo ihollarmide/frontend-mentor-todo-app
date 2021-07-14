@@ -6,7 +6,6 @@ const Container = styled.div`
   border-radius: 4px;
   box-shadow: ${props => props.theme === "light" ? "0px 35px 50px -15px rgba(194, 195, 214, 0.5)" : "0px 35px 50px -15px rgba(0, 0, 0, 0.5)" };
   margin-bottom: 50px;
-  overflow: hidden;
 
   @media only screen and (max-width: 600px) {
     margin-bottom: 104px;
