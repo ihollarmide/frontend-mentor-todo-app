@@ -9,6 +9,17 @@ import AddTodo from './components/AddTodo.jsx';
 import TodoList from './components/TodoList.jsx';
 import TodoListItem from './components/TodoListItem.jsx';
 import TodoFooter from './components/TodoFooter.jsx';
+import Info from './components/Info.jsx';
+
+const ListContainer = styled.div`
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: ${props => props.theme === "light" ? "0px 35px 50px -15px rgba(194, 195, 214, 0.5)" : "0px 35px 50px -15px rgba(0, 0, 0, 0.5)" };
+
+  @media only screen and (max-width: 600px) {
+    overflow: unset;
+  }
+`;
 
 const Container = styled.main`
   position: relative;
@@ -21,6 +32,7 @@ const Container = styled.main`
     padding-top: 33px;
   }
 `
+
 
 function App() {
   // Access theme variable from Glocal ThemeContext
@@ -76,14 +88,17 @@ function App() {
   let filteredTodoItems;
   if (filter === 'All') {
     filteredTodoItems = todoItems;
+    console.log(filteredTodoItems.length);
   }
 
   if (filter === 'Active') {
     filteredTodoItems = todoItems.filter(todoItem => todoItem.completed === false);
+    console.log(filteredTodoItems.length);
   }
 
   if (filter === 'Completed') {
     filteredTodoItems = todoItems.filter(todoItem => todoItem.completed === true);
+    console.log(filteredTodoItems.length);
   }
 
   // Filter Setter function
@@ -184,35 +199,38 @@ function App() {
   return (
     <>
       <GlobalStyles theme={theme}/>
-      <Container role="main">
+      <Container>
         <ThemeController />
         <AddTodo theme={theme} value={value} handleInput={handleInput} addTodoItem={addTodoItem}/>
 
-        <DragDropContext onDragEnd={handleOnDragEnd}>
-          <Droppable droppableId="droppable">
-            {(provided) => (
-              <div ref={provided.innerRef} {...provided.droppableProps}>
-                <TodoList theme={theme}>
-                  {
-                    filteredTodoItems.map((todoItem, index) => (
-                      <Draggable key={todoItem.id} draggableId={todoItem.id} index={index}>
-                        {(provided) => (
-                          <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                            <TodoListItem id={todoItem.id} theme={theme} text={todoItem.text} completed={todoItem.completed} handleCheck={handleCheck} deleteTodoItem={deleteTodoItem} />
-                          </div>
-                          
-                        )}
-                      </Draggable>
-                    ))
-                  }
-                  {provided.placeholder}
-                  <TodoFooter theme={theme} todoItemsLeft={todoItemsLeft.length} clearCompletedTodoItems={clearCompletedTodoItems} activateFilter={activateFilter} filter={filter}/>
-                </TodoList>
-                
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
+        <ListContainer theme={theme}>
+          <DragDropContext onDragEnd={handleOnDragEnd}>
+            <Droppable droppableId="droppable">
+              {(provided) => (
+                <div ref={provided.innerRef} {...provided.droppableProps}>
+                  <TodoList theme={theme}>
+                    {
+                      filteredTodoItems.map((todoItem, index) => (
+                        <Draggable key={todoItem.id} draggableId={todoItem.id} index={index}>
+                          {(provided) => (
+                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} role="list-item">
+                              <TodoListItem id={todoItem.id} theme={theme} text={todoItem.text} completed={todoItem.completed} handleCheck={handleCheck} deleteTodoItem={deleteTodoItem}/>
+                            </div>
+                            
+                          )}
+                        </Draggable>
+                      ))
+                    }
+                    {provided.placeholder}
+                  </TodoList>
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+
+          <TodoFooter theme={theme} todoItemsLeft={todoItemsLeft.length} clearCompletedTodoItems={clearCompletedTodoItems} activateFilter={activateFilter} filter={filter}/>
+        </ListContainer>
+        <Info theme={theme}/>
       </Container>
     </>
   );

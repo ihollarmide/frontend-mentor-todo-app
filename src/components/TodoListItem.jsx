@@ -99,10 +99,6 @@ const TodoItem = styled.div`
   color: inherit;
   cursor: pointer;
 
-  &:first-of-type {
-    border-radius: 4px 4px 0 0;
-  }
-
   &:hover ${TodoItemDelete} {
     opacity: 1;
     visibility: visible;
@@ -158,11 +154,11 @@ const TodoText = styled.p`
 
 const TodoListItem = ({ id, theme, text, completed, handleCheck, deleteTodoItem }) => {
   return (
-    <TodoItem theme={theme} role="list">
+    <TodoItem theme={theme} role="note">
       
       <TodoInstruction role="region">
-        <TodoCheck type="checkbox" id={`todo-item-${id}`} checked={completed} onChange={() => handleCheck(id)}/>
-        <TodoMarker htmlFor={`todo-item-${id}`} theme={theme} role="checkbox"/>
+        <TodoCheck type="checkbox" id={`todo-item-${id}`} checked={completed} ariaChecked={completed} onChange={() => handleCheck(id)}/>
+        <TodoMarker htmlFor={`todo-item-${id}`} theme={theme} role="switch" ariaLabelledBy={`todo-item-${id}`} />
         <TodoText theme={theme} completed={completed} onClick={() => handleCheck(id)} role="region">{text}</TodoText>
       </TodoInstruction>
       <TodoItemDelete onClick={() => deleteTodoItem(id)} role="button">
